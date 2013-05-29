@@ -1,0 +1,739 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-28 22:34:54 -0600
+Served asset /rails.png - 200 OK (28ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 22:36:19 -0600
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.3ms)
+Compiled welcome.css  (28ms)  (pid 6011)
+Compiled application.css  (35ms)  (pid 6011)
+Compiled jquery.js  (2ms)  (pid 6011)
+Compiled jquery_ujs.js  (0ms)  (pid 6011)
+Compiled welcome.js  (92ms)  (pid 6011)
+Compiled application.js  (159ms)  (pid 6011)
+Completed 200 OK in 279ms (Views: 278.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
+Served asset /welcome.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
+Served asset /welcome.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
+Served asset /application.js - 200 OK (6ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
+Processing by WelcomeController#search as HTML
+  Rendered welcome/search.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 22:51:47 -0600
+Processing by WelcomeController#home as HTML
+ERROR: compiling _app_views_welcome_home_html_erb__610240891222345124_70357455856540 RAISED /Users/philbattos/projects/cache_map/app/views/welcome/home.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nk_to "Search page" search_path );@output_buffer.to_s
+...                               ^
+Function body:           def _app_views_welcome_home_html_erb__610240891222345124_70357455856540(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "welcome/home";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('Home page view
+
+');@output_buffer.append= ( link_to "Search page" search_path );@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `module_eval'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `compile'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:232:in `compile!'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:144:in `block in render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:125:in `instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:143:in `render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:414:in `_run__3808503992684286926__process_action__2551320914787801678__callbacks'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:121:in `process'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal.rb:246:in `block in action'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:612:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/query_cache.rb:64:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `_run__4541294519405654996__call__1543407666053790568__callbacks'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/engine.rb:479:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/application.rb:223:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered welcome/home.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (/Users/philbattos/projects/cache_map/app/views/welcome/home.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nk_to "Search page" search_path );@output_buffer.to_s
+...                               ^):
+    1: Home page view
+    2: 
+    3: <%= link_to "Search page" search_path %>
+  actionpack (3.2.13) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.13) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.13) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.13) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.13) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.13) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.13) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__3808503992684286926__process_action__2551320914787801678__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__4541294519405654996__call__1543407666053790568__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
+Processing by WelcomeController#search as HTML
+  Rendered welcome/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-05-28 22:53:51 -0600
+Processing by WelcomeController#search as HTML
+  Rendered welcome/search.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined local variable or method `home_path' for #<#<Class:0x007ffabe51b718>:0x007ffabe7f2f90>):
+    1: Search page view
+    2: 
+    3: <p><%= link_to "Home page", home_path %>
+    4: 
+    5: <p><%= link_to "Map page", map_path %>
+  app/views/welcome/search.html.erb:3:in `_app_views_welcome_search_html_erb___4146114238634042414_70357451190760'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Processing by WelcomeController#search as HTML
+  Rendered welcome/search.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Processing by WelcomeController#search as HTML
+  Rendered welcome/search.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Processing by WelcomeController#search as HTML
+  Rendered welcome/search.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
+Served asset /welcome.js - 200 OK (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:41 -0600
+Served asset /welcome.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:41 -0600
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:41 -0600
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-05-28 23:02:42 -0600
+Processing by WelcomeController#search as HTML
+  Rendered welcome/search.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
