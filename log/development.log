@@ -1,14 +1,24 @@
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateGeonames (20130530051044)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "geonames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "feature_id" integer, "feature_name" varchar(255), "feature_class" varchar(255), "state_alpha" varchar(255), "county_name" varchar(255), "primary_lat_dms" text, "prim_long_dms" text, "prim_lat_dec" text, "prim_long_dec" text, "elev_in_m" integer, "elev_in_ft" integer, "map_name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130530051044')[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
 
 
-Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-28 22:34:54 -0600
-Served asset /rails.png - 200 OK (28ms)
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:20:51 -0600
 
-
-Started GET "/" for 127.0.0.1 at 2013-05-28 22:36:19 -0600
-
-ActionController::RoutingError (No route matches [GET] "/"):
+ActionController::RoutingError (No route matches [GET] "/map"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -31,214 +41,256 @@ ActionController::RoutingError (No route matches [GET] "/"):
   /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
-Connecting to database specified by database.yml
-Connecting to database specified by database.yml
-Connecting to database specified by database.yml
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
 
 
-Started GET "/" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.3ms)
-Compiled welcome.css  (28ms)  (pid 6011)
-Compiled application.css  (35ms)  (pid 6011)
-Compiled jquery.js  (2ms)  (pid 6011)
-Compiled jquery_ujs.js  (0ms)  (pid 6011)
-Compiled welcome.js  (92ms)  (pid 6011)
-Compiled application.js  (159ms)  (pid 6011)
-Completed 200 OK in 279ms (Views: 278.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-29 23:20:57 -0600
+Served asset /rails.png - 200 OK (7ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
-Served asset /application.css - 200 OK (4ms)
+Started GET "/newrelic" for 127.0.0.1 at 2013-05-29 23:21:11 -0600
+
+ActionController::RoutingError (No route matches [GET] "/newrelic"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
-Served asset /welcome.css - 200 OK (2ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+Started GET "/new" for 127.0.0.1 at 2013-05-29 23:21:16 -0600
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
-Served asset /jquery.js - 304 Not Modified (5ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
-Served asset /welcome.js - 200 OK (2ms)
+Started GET "/geoname" for 127.0.0.1 at 2013-05-29 23:21:23 -0600
+
+ActionController::RoutingError (No route matches [GET] "/geoname"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:49:47 -0600
-Served asset /application.js - 200 OK (6ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
 
 
-Started GET "/search" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
-Processing by WelcomeController#search as HTML
-  Rendered welcome/search.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:21:26 -0600
+
+AbstractController::ActionNotFound (The action 'index' could not be found for GeonamesController):
+  actionpack (3.2.13) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1550452477124265553__call__1782533581270626141__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
-Served asset /jquery.js - 304 Not Modified (0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:26:05 -0600
+
+AbstractController::ActionNotFound (The action 'index' could not be found for GeonamesController):
+  actionpack (3.2.13) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1550452477124265553__call__1782533581270626141__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:50:11 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
+Started GET "/home" for 127.0.0.1 at 2013-05-29 23:26:21 -0600
+
+ActionController::RoutingError (No route matches [GET] "/home"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/" for 127.0.0.1 at 2013-05-28 22:51:47 -0600
-Processing by WelcomeController#home as HTML
-ERROR: compiling _app_views_welcome_home_html_erb__610240891222345124_70357455856540 RAISED /Users/philbattos/projects/cache_map/app/views/welcome/home.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
-...nk_to "Search page" search_path );@output_buffer.to_s
-...                               ^
-Function body:           def _app_views_welcome_home_html_erb__610240891222345124_70357455856540(local_assigns, output_buffer)
-            _old_virtual_path, @virtual_path = @virtual_path, "welcome/home";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('Home page view
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
 
-');@output_buffer.append= ( link_to "Search page" search_path );@output_buffer.to_s
-          ensure
-            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
-          end
 
-Backtrace: /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `module_eval'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `compile'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:244:in `block in compile!'
-<internal:prelude>:10:in `synchronize'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:232:in `compile!'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:144:in `block in render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:125:in `instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/template.rb:143:in `render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:18:in `render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:36:in `render_template'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:17:in `render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:110:in `_render_template'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/streaming.rb:225:in `_render_template'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:103:in `render_to_body'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:88:in `render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:16:in `render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
-/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `ms'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:39:in `render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:167:in `process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:10:in `process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:414:in `_run__3808503992684286926__process_action__2551320914787801678__callbacks'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:17:in `process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rescue.rb:29:in `process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:121:in `process'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:45:in `process'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal.rb:203:in `dispatch'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_controller/metal.rb:246:in `block in action'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:36:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:612:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/head.rb:14:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/flash.rb:242:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/cookies.rb:341:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/query_cache.rb:64:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `_run__4541294519405654996__call__1543407666053790568__callbacks'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/reloader.rb:65:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/logger.rb:32:in `call_app'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `block in call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/tagged_logging.rb:22:in `tagged'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/request_id.rb:22:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/activesupport-3.2.13/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/static.rb:63:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/engine.rb:479:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/application.rb:223:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/railties-3.2.13/lib/rails/rack/log_tailer.rb:17:in `call'
-/Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
-/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
-/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
-/Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
-  Rendered welcome/home.html.erb within layouts/application (5.7ms)
-Completed 500 Internal Server Error in 8ms
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:28:05 -0600
+Processing by GeonamesController#index as HTML
+  [1m[36mGeoname Load (0.1ms)[0m  [1mSELECT "geonames".* FROM "geonames" [0m
+Completed 500 Internal Server Error in 43ms
 
-ActionView::Template::Error (/Users/philbattos/projects/cache_map/app/views/welcome/home.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
-...nk_to "Search page" search_path );@output_buffer.to_s
-...                               ^):
-    1: Home page view
-    2: 
-    3: <%= link_to "Search page" search_path %>
-  actionpack (3.2.13) lib/action_view/template.rb:297:in `module_eval'
-  actionpack (3.2.13) lib/action_view/template.rb:297:in `compile'
-  actionpack (3.2.13) lib/action_view/template.rb:244:in `block in compile!'
-  <internal:prelude>:10:in `synchronize'
-  actionpack (3.2.13) lib/action_view/template.rb:232:in `compile!'
-  actionpack (3.2.13) lib/action_view/template.rb:144:in `block in render'
-  activesupport (3.2.13) lib/active_support/notifications.rb:125:in `instrument'
-  actionpack (3.2.13) lib/action_view/template.rb:143:in `render'
-  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
-  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
-  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
-  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
-  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
-  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
-  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
-  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
-  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
-  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:18:in `render'
+ActionView::MissingTemplate (Missing template geonames/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
   actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
   actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
   actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
@@ -261,7 +313,7 @@ ActionView::Template::Error (/Users/philbattos/projects/cache_map/app/views/welc
   actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
   actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
   actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
-  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__3808503992684286926__process_action__2551320914787801678__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__76230499364812978__process_action__1922842498723243045__callbacks'
   activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
   activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
   activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
@@ -298,7 +350,7 @@ ActionView::Template::Error (/Users/philbattos/projects/cache_map/app/views/welc
   activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
   activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__4541294519405654996__call__1543407666053790568__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1550452477124265553__call__1782533581270626141__callbacks'
   activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
   activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
   activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
@@ -327,413 +379,1693 @@ ActionView::Template::Error (/Users/philbattos/projects/cache_map/app/views/welc
   /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
-  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
-  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
 
 
-Started GET "/" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 13ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:29:02 -0600
+Processing by GeonamesController#index as HTML
+  [1m[35mGeoname Load (0.2ms)[0m  SELECT "geonames".* FROM "geonames" 
+  Rendered geonames/index.html.erb within layouts/application (0.3ms)
+Compiled geonames.css  (7ms)  (pid 7679)
+Compiled application.css  (15ms)  (pid 7679)
+Compiled jquery.js  (21ms)  (pid 7679)
+Compiled jquery_ujs.js  (0ms)  (pid 7679)
+Compiled geonames.js  (89ms)  (pid 7679)
+Compiled application.js  (139ms)  (pid 7679)
+Completed 200 OK in 206ms (Views: 204.9ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:29:03 -0600
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:29:03 -0600
+Served asset /geonames.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:29:03 -0600
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:29:03 -0600
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:29:03 -0600
+Served asset /application.js - 200 OK (6ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:29:03 -0600
+Served asset /geonames.js - 304 Not Modified (2ms)
+
+
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:30:16 -0600
+Processing by GeonamesController#index as HTML
+  [1m[36mGeoname Load (0.3ms)[0m  [1mSELECT "geonames".* FROM "geonames" [0m
+  Rendered geonames/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:30:16 -0600
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:30:16 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:30:16 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:30:16 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:30:16 -0600
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:52:40 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:30:16 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:32:26 -0600
+Processing by GeonamesController#index as HTML
+  [1m[35mGeoname Load (0.2ms)[0m  SELECT "geonames".* FROM "geonames" 
+  Rendered geonames/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 7ms
 
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:12 -0600
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/search" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
-Processing by WelcomeController#search as HTML
-  Rendered welcome/search.html.erb within layouts/application (0.0ms)
-Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:15 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.7ms)
-Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:53:46 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/search" for 127.0.0.1 at 2013-05-28 22:53:51 -0600
-Processing by WelcomeController#search as HTML
-  Rendered welcome/search.html.erb within layouts/application (6.7ms)
-Completed 500 Internal Server Error in 9ms
-
-ActionView::Template::Error (undefined local variable or method `home_path' for #<#<Class:0x007ffabe51b718>:0x007ffabe7f2f90>):
-    1: Search page view
+ActionView::Template::Error (undefined local variable or method `results_path' for #<#<Class:0x007fc315599720>:0x007fc3162b2e20>):
     2: 
-    3: <p><%= link_to "Home page", home_path %>
+    3: <p>Enter your SEARCH-BUTTON here
     4: 
-    5: <p><%= link_to "Map page", map_path %>
-  app/views/welcome/search.html.erb:3:in `_app_views_welcome_search_html_erb___4146114238634042414_70357451190760'
+    5: <p><%= link_to "Search Results", results_path %>
+    6: 
+    7: <p><%= link_to "Map", map_path %>
+  app/views/geonames/index.html.erb:5:in `_app_views_geonames_index_html_erb__3663068578549909913_70237933637200'
 
 
   Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
   Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
-  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+Connecting to database specified by database.yml
 
 
-Started GET "/search" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
-Processing by WelcomeController#search as HTML
-  Rendered welcome/search.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:34:55 -0600
+Processing by GeonamesController#index as HTML
+  [1m[36mGeoname Load (0.1ms)[0m  [1mSELECT "geonames".* FROM "geonames" [0m
+  Rendered geonames/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.6ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:34:55 -0600
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:34:56 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:34:56 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:34:56 -0600
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:54:36 -0600
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:34:56 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:34:56 -0600
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/search" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
-Processing by WelcomeController#search as HTML
-  Rendered welcome/search.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:34:58 -0600
+Processing by GeonamesController#results as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActionView::MissingTemplate (Missing template geonames/results, application/results with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__76230499364812978__process_action__3618721423971821301__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1550452477124265553__call__1782533581270626141__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:35:03 -0600
+Processing by GeonamesController#map as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActionView::MissingTemplate (Missing template geonames/map, application/map with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__76230499364812978__process_action__3001361332301295740__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1550452477124265553__call__1782533581270626141__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:35:07 -0600
+Processing by GeonamesController#results as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActionView::MissingTemplate (Missing template geonames/results, application/results with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__76230499364812978__process_action__3618721423971821301__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1550452477124265553__call__1782533581270626141__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:35:10 -0600
+Processing by GeonamesController#map as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActionView::MissingTemplate (Missing template geonames/map, application/map with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__76230499364812978__process_action__3001361332301295740__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1550452477124265553__call__1782533581270626141__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-29 23:35:17 -0600
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2013-05-29 23:35:51 -0600
+
+ActionController::RoutingError (No route matches [GET] "/index"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2013-05-29 23:46:06 -0600
+
+ActionController::RoutingError (No route matches [GET] "/index"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/geoname" for 127.0.0.1 at 2013-05-29 23:46:13 -0600
+
+ActionController::RoutingError (No route matches [GET] "/geoname"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:46:19 -0600
+Processing by GeonamesController#index as HTML
+  [1m[35mGeoname Load (0.1ms)[0m  SELECT "geonames".* FROM "geonames" 
+  Rendered geonames/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined local variable or method `include_gon' for #<#<Class:0x007fc318145ef0>:0x007fc318266758>):
+    2: <html>
+    3: <head>
+    4:   <title>CacheMappr</title>
+    5:   <%= include_gon %>
+    6:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1975002433787344055_70237950253800'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:46:52 -0600
+Processing by GeonamesController#index as HTML
+  [1m[36mGeoname Load (0.1ms)[0m  [1mSELECT "geonames".* FROM "geonames" [0m
+  Rendered geonames/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined local variable or method `include_gon' for #<#<Class:0x007fc318145ef0>:0x007fc3158b3640>):
+    2: <html>
+    3: <head>
+    4:   <title>CacheMappr</title>
+    5:   <%= include_gon %>
+    6:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1975002433787344055_70237950253800'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (24.6ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:47:14 -0600
+Processing by GeonamesController#index as HTML
+  [1m[36mGeoname Load (0.1ms)[0m  [1mSELECT "geonames".* FROM "geonames" [0m
+  Rendered geonames/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 68ms (Views: 33.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:47:14 -0600
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:47:14 -0600
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:47:14 -0600
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:47:14 -0600
+Served asset /geonames.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:47:14 -0600
+Served asset /geonames.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:47:14 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:47:17 -0600
+Processing by GeonamesController#results as HTML
+Completed 500 Internal Server Error in 24ms
+
+ActionView::MissingTemplate (Missing template geonames/results, application/results with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__736315395478956655__process_action__1239280579541671489__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__2899898073916614344__call__692726090836868308__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:47:23 -0600
+Processing by GeonamesController#map as HTML
+  [1m[35mGeoname Load (0.2ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+Completed 500 Internal Server Error in 16ms
+
+NoMethodError (undefined method `prim_lat_dec' for nil:NilClass):
+  app/controllers/geonames_controller.rb:13:in `map'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:47:36 -0600
+Processing by GeonamesController#results as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActionView::MissingTemplate (Missing template geonames/results, application/results with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__736315395478956655__process_action__1239280579541671489__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__2899898073916614344__call__692726090836868308__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:48:53 -0600
+Processing by GeonamesController#results as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActionView::MissingTemplate (Missing template geonames/results, application/results with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__736315395478956655__process_action__1239280579541671489__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__2899898073916614344__call__692726090836868308__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:48:59 -0600
+Processing by GeonamesController#index as HTML
+  [1m[36mGeoname Load (0.1ms)[0m  [1mSELECT "geonames".* FROM "geonames" [0m
+  Rendered geonames/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:48:59 -0600
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:48:59 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:48:59 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:48:59 -0600
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:06 -0600
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:48:59 -0600
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/home" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 38ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:48:59 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
-Served asset /application.css - 304 Not Modified (0ms)
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:49:01 -0600
+Processing by GeonamesController#results as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActionView::MissingTemplate (Missing template geonames/results, application/results with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/philbattos/projects/cache_mappr/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__736315395478956655__process_action__1239280579541671489__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__2899898073916614344__call__692726090836868308__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:49:38 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:49:38 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:49:38 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:08 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/home" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:49:38 -0600
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:49:38 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:49:38 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:49:38 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:50:18 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined local variable or method `index_path' for #<#<Class:0x007fb9548cd330>:0x007fb951b7d718>):
+    1: <p><%= link_to "Index", index_path %>
+    2: 
+    3: <p><%= link_to "Map", map_path %>
+  app/views/geonames/results.html.erb:1:in `_app_views_geonames_results_html_erb__2726516569069926695_70216957084440'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:50:33 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined local variable or method `index' for #<#<Class:0x007fb9548cd330>:0x007fb9550e4820>):
+    1: <p><%= link_to "Index", index %>
+    2: 
+    3: <p><%= link_to "Map", map_path %>
+  app/views/geonames/results.html.erb:1:in `_app_views_geonames_results_html_erb__2726516569069926695_70216986352480'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:50:47 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined local variable or method `root' for #<#<Class:0x007fb9548cd330>:0x007fb9519d0960>):
+    1: <p><%= link_to "Index", root %>
+    2: 
+    3: <p><%= link_to "Map", map_path %>
+  app/views/geonames/results.html.erb:1:in `_app_views_geonames_results_html_erb__2726516569069926695_70216957459100'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:50:57 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined local variable or method `root_path' for #<#<Class:0x007fb9548cd330>:0x007fb951c5d9d0>):
+    1: <p><%= link_to "Index", root_path %>
+    2: 
+    3: <p><%= link_to "Map", map_path %>
+  app/views/geonames/results.html.erb:1:in `_app_views_geonames_results_html_erb__2726516569069926695_70216958796740'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:51:59 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:51:59 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:51:59 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:51:59 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:51:59 -0600
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:26 -0600
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:51:59 -0600
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/home" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:51:59 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:52:02 -0600
+Processing by GeonamesController#index as HTML
+  [1m[35mGeoname Load (0.2ms)[0m  SELECT "geonames".* FROM "geonames" 
+  Rendered geonames/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:52:02 -0600
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:52:02 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:02 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:36 -0600
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:02 -0600
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/search" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
-Processing by WelcomeController#search as HTML
-  Rendered welcome/search.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:02 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
-Served asset /application.css - 304 Not Modified (0ms)
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:02 -0600
+Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:52:05 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 12.3ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:52:05 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:05 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:05 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:05 -0600
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:55:39 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/home" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:52:05 -0600
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:52:05 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:52:07 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.2ms)[0m  [1mSELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `prim_lat_dec' for nil:NilClass):
+  app/controllers/geonames_controller.rb:13:in `map'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:53:56 -0600
+Processing by GeonamesController#map as HTML
+  [1m[35mGeoname Load (0.2ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `prim_lat_dec' for nil:NilClass):
+  app/controllers/geonames_controller.rb:13:in `map'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "geonames" ("county_name", "created_at", "elev_in_ft", "elev_in_m", "feature_class", "feature_id", "feature_name", "map_name", "prim_lat_dec", "prim_long_dec", "prim_long_dms", "primary_lat_dms", "state_alpha", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["county_name", "Desha"], ["created_at", Thu, 30 May 2013 05:54:08 UTC +00:00], ["elev_in_ft", 108], ["elev_in_m", 33], ["feature_class", "Stream"], ["feature_id", 78956], ["feature_name", "Arkansas River"], ["map_name", "Rosedale"], ["prim_lat_dec", 33.7751096], ["prim_long_dec", -91.0709427], ["prim_long_dms", nil], ["primary_lat_dms", nil], ["state_alpha", "AR"], ["updated_at", Thu, 30 May 2013 05:54:08 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:54:11 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.2ms)[0m  [1mSELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+  Rendered geonames/map.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined local variable or method `index_path' for #<#<Class:0x007fb9550b3310>:0x007fb9550b05e8>):
+    1: <b>Map</b> page view
+    2: 
+    3: <p><%= link_to "Home page", index_path %>
+    4: 
+    5: <p><%= link_to "Search Results", results_path %>
+    6: 
+  app/views/geonames/map.html.erb:3:in `_app_views_geonames_map_html_erb___3057791198403136729_70216987550420'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.5ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:54:39 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.2ms)[0m  [1mSELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+  Rendered geonames/map.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:54:39 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:54:39 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:54:39 -0600
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:54:39 -0600
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 22:58:10 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/home" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.3ms)
-Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
-Served asset /welcome.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:54:39 -0600
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
-Served asset /welcome.css - 304 Not Modified (0ms)
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:54:39 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:16 -0600
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:55:36 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.2ms)[0m  [1mSELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+  Rendered geonames/map.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:55:36 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:55:36 -0600
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/home" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
-Processing by WelcomeController#home as HTML
-  Rendered welcome/home.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:36 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
-Served asset /application.css - 200 OK (0ms)
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:36 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
-Served asset /jquery.js - 200 OK (0ms)
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:36 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:40 -0600
-Served asset /welcome.js - 200 OK (0ms)
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:36 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "geonames" ("county_name", "created_at", "elev_in_ft", "elev_in_m", "feature_class", "feature_id", "feature_name", "map_name", "prim_lat_dec", "prim_long_dec", "prim_long_dms", "primary_lat_dms", "state_alpha", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["county_name", "Desha"], ["created_at", Thu, 30 May 2013 05:55:52 UTC +00:00], ["elev_in_ft", 108], ["elev_in_m", 33], ["feature_class", "Stream"], ["feature_id", 78956], ["feature_name", "Arkansas River"], ["map_name", "Rosedale"], ["prim_lat_dec", 43.7751096], ["prim_long_dec", -91.0709427], ["prim_long_dms", nil], ["primary_lat_dms", nil], ["state_alpha", "AR"], ["updated_at", Thu, 30 May 2013 05:55:52 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
 
 
-Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-05-28 23:02:41 -0600
-Served asset /welcome.css - 200 OK (0ms)
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:55:58 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.3ms)[0m  [1mSELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+  Rendered geonames/map.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:41 -0600
-Served asset /jquery_ujs.js - 200 OK (0ms)
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:55:58 -0600
+Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 23:02:41 -0600
-Served asset /application.js - 200 OK (0ms)
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:55:58 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
 
 
-Started GET "/search" for 127.0.0.1 at 2013-05-28 23:02:42 -0600
-Processing by WelcomeController#search as HTML
-  Rendered welcome/search.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:58 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:58 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:58 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:55:58 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-29 23:58:59 -0600
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-29 23:59:09 -0600
+
+ActionController::RoutingError (No route matches [GET] "/home"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/geonames" for 127.0.0.1 at 2013-05-29 23:59:16 -0600
+Processing by GeonamesController#index as HTML
+  [1m[36mGeoname Load (0.2ms)[0m  [1mSELECT "geonames".* FROM "geonames" [0m
+  Rendered geonames/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 70ms (Views: 41.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:59:16 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:16 -0600
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:16 -0600
+Served asset /geonames.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:16 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:16 -0600
+Served asset /jquery.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:59:16 -0600
+Served asset /geonames.css - 304 Not Modified (2ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-29 23:59:18 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:59:18 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:59:18 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:18 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:18 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:18 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:18 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-29 23:59:19 -0600
+Processing by GeonamesController#map as HTML
+  [1m[35mGeoname Load (0.2ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1[0m
+  Rendered geonames/map.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-29 23:59:19 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:19 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:19 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-29 23:59:19 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:19 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-29 23:59:19 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "geonames" ("county_name", "created_at", "elev_in_ft", "elev_in_m", "feature_class", "feature_id", "feature_name", "map_name", "prim_lat_dec", "prim_long_dec", "prim_long_dms", "primary_lat_dms", "state_alpha", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["county_name", "Desha"], ["created_at", Thu, 30 May 2013 06:00:04 UTC +00:00], ["elev_in_ft", 108], ["elev_in_m", 33], ["feature_class", "Stream"], ["feature_id", 78956], ["feature_name", "Arkansas River"], ["map_name", "Rosedale"], ["prim_lat_dec", 40.7751096], ["prim_long_dec", -110.0709427], ["prim_long_dms", nil], ["primary_lat_dms", nil], ["state_alpha", "AR"], ["updated_at", Thu, 30 May 2013 06:00:04 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-30 00:00:07 -0600
+Processing by GeonamesController#map as HTML
+  [1m[35mGeoname Load (0.2ms)[0m  SELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "geonames".* FROM "geonames" ORDER BY "geonames"."id" DESC LIMIT 1[0m
+  Rendered geonames/map.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-30 00:00:07 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-30 00:00:07 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-30 00:00:07 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-30 00:00:07 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 00:00:07 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-30 00:00:07 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)

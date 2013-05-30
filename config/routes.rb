@@ -1,11 +1,11 @@
-CacheMap::Application.routes.draw do
+CacheMappr::Application.routes.draw do
+
+  resources :geonames
+
+  get 'results' => 'geonames#results'
+  get 'map' => 'geonames#map'
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
-  root :to => 'welcome#home'
-  get 'home' => 'welcome#home'
-  get 'search' => 'welcome#search'
-  get 'map' => 'welcome#map'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
