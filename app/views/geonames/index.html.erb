@@ -1,20 +1,19 @@
 <h2>Index page</h2>
 
 
-<%= form_for(@place) do |f| %>
+<%= form_for @place do |f| %>
   <ul>
   <% @place.errors.full_messages.each do |error| %>
     <li><%= error %></li>
   <% end %>
   </ul>
-  <p>
-    <%= f.label :keyword %><br />
-    <%= f.text_field :map_name %>
-  </p>
+  <h3><%= f.label :clue_search, "Search for clue locations:" %></h3>
+  <p><%= f.text_field :feature_name %>
+  <%= f.submit "Find Clues" %>
+  <p><%= f.check_box :elev_in_ft %>
+  <%= f.label :elevation, "Only search for places above 5000 feet" %>
 
-  <p>
-    <%= f.submit "Find Clues" %>
-  </p>
+
 <% end %>
 
 <p><%= link_to "Search Results", results_path %>

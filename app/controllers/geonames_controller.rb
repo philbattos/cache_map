@@ -28,8 +28,10 @@ class GeonamesController < ApplicationController
   # end
 
   def create
-    @place = Geoname.find_all_by_feature_name(params[:map_name])
+    # @place = Geoname.new(params[:place])
     # @place.save
+
+    @place = Geoname.find_all_by_feature_name(params[:feature_name])
     redirect_to results_path
   end
 
