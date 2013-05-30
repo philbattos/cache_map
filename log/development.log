@@ -4058,3 +4058,230 @@ Served asset /geonames.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 00:50:49 -0600
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-30 07:58:23 -0600
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/philbattos/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/geonames" for 127.0.0.1 at 2013-05-30 07:58:32 -0600
+Processing by GeonamesController#index as HTML
+  Rendered geonames/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 97ms (Views: 44.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-30 07:58:32 -0600
+Served asset /geonames.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-30 07:58:32 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-30 07:58:32 -0600
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-30 07:58:32 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 07:58:32 -0600
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-30 07:58:32 -0600
+Served asset /geonames.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-30 07:59:21 -0600
+
+ArgumentError (missing :action):
+  config/routes.rb:5:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/philbattos/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-30 07:59:41 -0600
+Processing by GeonamesController#index as HTML
+  Rendered geonames/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 27ms (Views: 14.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-30 07:59:41 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:41 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:41 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:41 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-30 07:59:41 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:41 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2013-05-30 07:59:44 -0600
+Processing by GeonamesController#results as HTML
+  Rendered geonames/results.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-30 07:59:44 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-30 07:59:44 -0600
+Served asset /geonames.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:44 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:44 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:44 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:44 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-30 07:59:46 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.4ms)[0m  [1mSELECT "geonames".* FROM "geonames" LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "geonames".* FROM "geonames" LIMIT 1
+  Rendered geonames/map.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-30 07:59:46 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:46 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:46 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:46 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-30 07:59:46 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-30 07:59:46 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-30 08:00:32 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.2ms)[0m  [1mSELECT "geonames".* FROM "geonames" LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "geonames".* FROM "geonames" LIMIT 1
+  Rendered geonames/map.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-30 08:00:32 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-30 08:00:32 -0600
+Served asset /geonames.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-30 08:00:32 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-30 08:00:32 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-30 08:00:32 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 08:00:32 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2013-05-30 08:43:39 -0600
+Processing by GeonamesController#map as HTML
+  [1m[36mGeoname Load (0.2ms)[0m  [1mSELECT "geonames".* FROM "geonames" LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "geonames".* FROM "geonames" LIMIT 1
+  Rendered geonames/map.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-30 08:43:39 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/geonames.css?body=1" for 127.0.0.1 at 2013-05-30 08:43:39 -0600
+Served asset /geonames.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/geonames.js?body=1" for 127.0.0.1 at 2013-05-30 08:43:39 -0600
+Served asset /geonames.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-30 08:43:39 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-30 08:43:39 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-30 08:43:39 -0600
+Served asset /application.js - 304 Not Modified (0ms)

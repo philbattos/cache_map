@@ -2,6 +2,7 @@ CacheMappr::Application.routes.draw do
 
   resources :geonames
 
+  root :to => 'geonames#index'
   get 'results' => 'geonames#results'
   get 'map' => 'geonames#map'
   # The priority is based upon order of creation:
