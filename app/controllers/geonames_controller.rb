@@ -1,7 +1,7 @@
 class GeonamesController < ApplicationController
 
   def index
-    @places = Geoname.all
+    @place = Geoname.new
   end
 
   def results
@@ -10,8 +10,8 @@ class GeonamesController < ApplicationController
 
   def map
     @coordinates = Geoname.new
-    @latitude = Geoname.last.prim_lat_dec
-    @longitude = Geoname.last.prim_long_dec
+    @latitude = Geoname.first.prim_lat_dec
+    @longitude = Geoname.first.prim_long_dec
     gon.latitude = @latitude
     gon.longitude = @longitude
   end
@@ -20,14 +20,18 @@ class GeonamesController < ApplicationController
   # def show
   # end
 
-  # def new
-  # end
+  def new
+    @place = Geoname.new
+  end
 
   # def edit
   # end
 
-  # def create
-  # end
+  def create
+    @place = Geoname.find_all_by_feature_name(params[:map_name])
+    # @place.save
+    redirect_to results_path
+  end
 
   # def destroy
   # end

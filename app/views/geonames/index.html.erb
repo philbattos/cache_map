@@ -1,6 +1,21 @@
-Index page
+<h2>Index page</h2>
 
-<p>Enter your SEARCH-BUTTON here
+
+<%= form_for(@place) do |f| %>
+  <ul>
+  <% @place.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= f.label :keyword %><br />
+    <%= f.text_field :map_name %>
+  </p>
+
+  <p>
+    <%= f.submit "Find Clues" %>
+  </p>
+<% end %>
 
 <p><%= link_to "Search Results", results_path %>
 
