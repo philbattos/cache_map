@@ -1,6 +1,15 @@
 <h2>Search Results page</h2>
 
-<h3>Search results:</h3><%= @place %>
+<h3>Search results:</h3>
+  <% @geonames.each do |geoname| %>
+    <ul>
+      <li><h4>
+      Name: <%= link_to geoname.feature_name, geoname %><br>
+      Class: <%= geoname.feature_class %>
+      <br><%= link_to 'map', :controller => 'geonames', :action => 'map', :id => @geoname %>
+      </h4></li>
+    </ul>
+  <% end %>
 
 <p><%= link_to "Index", geonames_path %>
 
