@@ -4,9 +4,9 @@
   <% @geonames.each do |geoname| %>
     <ul>
       <li><h4>
-      Name: <%= link_to geoname.feature_name, geoname %><br>
+      Name: <%= link_to geoname.feature_name, geoname_path(geoname.feature_id) %><br>
       Class: <%= geoname.feature_class %>
-      <br><%= link_to 'map', :controller => 'geonames', :action => 'map', :id => @geoname %>
+      <!-- <br><%= link_to 'map', :controller => 'geonames', :action => 'map', :id => @geoname %> -->
       </h4></li>
     </ul>
   <% end %>

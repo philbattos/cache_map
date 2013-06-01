@@ -18,13 +18,38 @@
     </script>
     <script type="text/javascript">
       function initialize() {
+        var myLatlng = new google.maps.LatLng(<%= @geo_search[0].prim_lat_dec %>, <%= @geo_search[0].prim_long_dec %>);
         var mapOptions = {
-          center: new google.maps.LatLng(<%= @latitude %>, <%= @longitude %>),
-          zoom: 9,
+          center: myLatlng,
+          zoom: 5,
           mapTypeId: google.maps.MapTypeId.TERRAIN
           };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
+          mapOptions);
+        var contentString = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h3 id="firstHeading" class="firstHeading"><%= @geo_search[0].feature_name %></h3>'+
+          '<div id="bodyContent">'+
+          '<br>Type: <%= @geo_search[0].feature_class %>' +
+          '<br>State: <%= @geo_search[0].state_alpha %>' +
+          '<br>County: <%= @geo_search[0].county_name %>' +
+          '<br>Latitude: <%= @geo_search[0].prim_lat_dec %>' +
+          '<br>Longitude: <%= @geo_search[0].prim_long_dec %>' +
+          '<br>Elevation: <%= @geo_search[0].elev_in_ft %> ft.' +
+          '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: "<%= @geo_search[0].feature_name %>"
+          });
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map,marker);
+          });
         // var marker = new google.maps.MarkerOptions(position: gon.latitude, gon.longitude);
         // var marker = new google.maps.Marker(document.getElementById("map-canvas"),
         //     mapOptions);

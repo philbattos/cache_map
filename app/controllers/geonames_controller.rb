@@ -11,14 +11,15 @@ class GeonamesController < ApplicationController
 
   def map
     # @coordinates = Geoname.new
-    # @geoname = Geoname.find(params[:id])
-    @latitude = Geoname.first.prim_lat_dec
-    @longitude = Geoname.first.prim_long_dec
+    @geoname = Geoname.search(params)
+    @geo_search = Geoname.search(params)
+    # @latitude = Geoname.first.prim_lat_dec
+    # @longitude = Geoname.first.prim_long_dec
   end
 
 
   def show
-    @geoname = Geoname.find(params[:id])
+    @geoname = Geoname.find_by_feature_id(params[:id])
   end
 
   def new
