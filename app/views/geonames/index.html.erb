@@ -1,22 +1,20 @@
 <h2>Index page</h2>
 
-
-<%= form_for(@place) do |f| %>
-  <ul>
-  <% @place.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
+  <%= form_tag results_path, method: :get do %>
+    <p>
+      <h4><%= label_tag "Search for clues" %>
+      <br><%= text_field_tag :query, params[:query] %>
+      <%= submit_tag "Find Clues", feature_name: nil %></h4>
+    </p>
   <% end %>
-  </ul>
-  <p>
-    <%= f.label :keyword %><br />
-    <%= f.text_field :map_name %>
-  </p>
 
-  <p>
-    <%= f.submit "Find Clues" %>
-  </p>
-<% end %>
+<!-- <% @geonames.each do |geoname| %> -->
+  <!-- <h4> -->
+    <!-- <%= link_to geoname.feature_name, geoname %>: <%= geoname.feature_class %> -->
+  <!-- </h4> -->
+<!-- <% end %> -->
 
-<p><%= link_to "Search Results", results_path %>
 
-<p><%= link_to "Map", map_path %>
+<p><%= link_to "Search page", results_path %>
+
+<p><%= link_to "Map page", map_path %>

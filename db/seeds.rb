@@ -6,20 +6,33 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Geoname.create(feature_id: 78956,
-               feature_name: 'Arkansas River',
-               feature_class: 'Stream',
-               state_alpha: 'AR',
-               county_name: 'Desha',
-               # primary_lat_dms: 334630N,
-               # prim_long_dms: 0910415W,
-               prim_lat_dec: 40.7751096,
-               prim_long_dec: -110.0709427,
-               elev_in_m: 33,
-               elev_in_ft: '108',
-               map_name: 'Rosedale')
+arkansas_river = Geoname.create!(feature_id: 78956,
+                                 feature_name: 'Arkansas River',
+                                 feature_class: 'Stream',
+                                 state_alpha: 'AR',
+                                 county_name: 'Desha',
+                                 primary_lat_dms: '334630N',
+                                 prim_long_dms: '0910415W',
+                                 prim_lat_dec: 40.7751096,
+                                 prim_long_dec: -110.0709427,
+                                 elev_in_m: 33,
+                                 elev_in_ft: 108,
+                                 map_name: 'Rosedale')
 
-# 169341|Pinyon Creek|Stream|CO|08|Pueblo|101|382430N|1043602W|38.4083339|-104.6005282|382430N|1043602W|38.4083339|-104.6005282|1511|4957|Pinon|07/01/1990|04/01/2011
+pinyon_creek = Geoname.create!(feature_id: 169341,
+                               feature_name: 'Pinyon Creek',
+                               feature_class: 'Stream',
+                               state_alpha: 'CO',
+                               county_name: 'Pueblo',
+                               primary_lat_dms: '382430N',
+                               prim_long_dms: '1043602W',
+                               prim_lat_dec: 38.4083339,
+                               prim_long_dec: -104.6005282,
+                               elev_in_m: 1511,
+                               elev_in_ft: 4957,
+                               map_name: 'Pinon')
+
+
 # 169342|Pinnacle Ridge|Ridge|CO|08|Gunnison|051|380900N|1073032W|38.1499932|-107.5089482|||||3702|12146|Courthouse Mountain|07/01/1990|
 # 169344|Hidden Brook|Stream|CO|08|Boulder|013|401448N|1053208W|40.2466513|-105.5355555|401535N|1053357W|40.2596|-105.5658|2625|8612|Allenspark|08/01/1990|03/15/2007
 # 169345|Wulsten Baldy|Summit|CO|08|Custer|027|381505N|1054417W|38.2513874|-105.7380624|||||3870|12697|Cotopaxi|08/01/1990|

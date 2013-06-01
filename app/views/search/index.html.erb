@@ -1,0 +1,6 @@
+<% @geonames.each do |geoname| %>
+  <h4>
+    <%= link_to geoname.feature_name, geoname %>: <%= geoname.feature_class %>
+  </h4>
+<% end %>
+
