@@ -19,13 +19,15 @@
     <script type="text/javascript">
       function initialize() {
         var myLatlng = new google.maps.LatLng(<%= @geo_search[0].prim_lat_dec %>, <%= @geo_search[0].prim_long_dec %>);
+        var arkLatlng = new google.maps.LatLng(<%= @geo_search[1].prim_lat_dec %>, <%= @geo_search[1].prim_long_dec %>);
+        // var newcenter = new google.maps.LatLngBounds(38.000, -104.000, 39.000, -103.000).getCenter();
+        var selectcenter = new google.maps.LatLng(37.000, -105.000);
         var mapOptions = {
-          center: myLatlng,
-          zoom: 5,
+          center: selectcenter,
+          zoom: 6,
           mapTypeId: google.maps.MapTypeId.TERRAIN
           };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-          mapOptions);
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
         var contentString = '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
@@ -46,14 +48,58 @@
           position: myLatlng,
           map: map,
           title: "<%= @geo_search[0].feature_name %>"
-          });
+        });
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.open(map,marker);
-          });
-        // var marker = new google.maps.MarkerOptions(position: gon.latitude, gon.longitude);
-        // var marker = new google.maps.Marker(document.getElementById("map-canvas"),
-        //     mapOptions);
-        };
+        });
+        var marker = new google.maps.Marker({
+          position: arkLatlng,
+          map: map,
+          title: "<%= @geo_search[1].feature_name %>"
+        });
+        var Item_1 = new google.maps.LatLng(37.00, -107.00);
+        var myPlace = new google.maps.LatLng(45.4555729, 9.169236);
+        var Item_2 = new google.maps.LatLng(30.00, -108.00);
+        var Item_3 = new google.maps.LatLng(32.00, -110.00);
+        var Item_4 = new google.maps.LatLng(39.00, -103.00);
+        var Item_5 = new google.maps.LatLng(37.00, -109.00);
+
+
+        var marker = new google.maps.Marker({
+            position: Item_1,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: myPlace,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: Item_2,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: Item_3,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: Item_4,
+            map: map
+        });
+        var marker = new google.maps.Marker({
+            position: Item_5,
+            map: map
+        });
+
+        var bounds = new google.maps.LatLngBounds();
+          // bounds.extend(myPlace);
+          bounds.extend(Item_1);
+          bounds.extend(Item_2);
+          // bounds.extend(Item_3);
+          bounds.extend(Item_4);
+          bounds.extend(Item_5);
+          // bounds.extend(arkLatlng);
+          map.fitBounds(bounds);
+      };
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
