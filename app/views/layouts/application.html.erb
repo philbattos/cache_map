@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CacheMap</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>CacheMap</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
-<%= yield %>
+    <%= yield :map %>
 
-</body>
+  </head>
+
+  <body>
+    <%= yield %>
+    <div id="map-canvas"/>
+  </body>
+
+  <footer>
+    <%= yield :scripts %>
+  </footer>
+
 </html>

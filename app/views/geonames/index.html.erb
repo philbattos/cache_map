@@ -1,6 +1,6 @@
 <h2>Index page</h2>
 
-  <%= form_tag results_path, method: :get do %>
+  <%= form_tag map_path, method: :get do %>
     <p>
       <h4><%= label_tag "Search for clues" %>
       <br><%= text_field_tag :query, params[:query] %>

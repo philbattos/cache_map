@@ -34,7 +34,7 @@ class Geoname < ActiveRecord::Base
   def self.search(params)
     tire.search do
       query { string params[:query] } if params[:query].present?
-      filter :range, elev_in_ft: {lt: 5000}
+      # filter :range, elev_in_ft: {lt: 5000}
     end
   end
 

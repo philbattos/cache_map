@@ -13,6 +13,7 @@ class GeonamesController < ApplicationController
     # @coordinates = Geoname.new
     @geoname = Geoname.search(params)
     @geo_search = Geoname.search(params)
+    # @search_terms = params[query]
     # @latitude = Geoname.first.prim_lat_dec
     # @longitude = Geoname.first.prim_long_dec
   end

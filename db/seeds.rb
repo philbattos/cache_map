@@ -32,9 +32,32 @@ pinyon_creek = Geoname.create!(feature_id: 169341,
                                elev_in_ft: 4957,
                                map_name: 'Pinon')
 
+pinnacle_ridge = Geoname.create!(feature_id: 169342,
+                                 feature_name: 'Pinnacle Ridge',
+                                 feature_class: 'Ridge',
+                                 state_alpha: 'CO',
+                                 county_name: 'Gunnison',
+                                 primary_lat_dms: '380900N',
+                                 prim_long_dms: '1073032W',
+                                 prim_lat_dec: 38.1499932,
+                                 prim_long_dec: -107.5089482,
+                                 elev_in_m: 3702,
+                                 elev_in_ft: 12146,
+                                 map_name: 'Courthouse Mountain')
 
-# 169342|Pinnacle Ridge|Ridge|CO|08|Gunnison|051|380900N|1073032W|38.1499932|-107.5089482|||||3702|12146|Courthouse Mountain|07/01/1990|
-# 169344|Hidden Brook|Stream|CO|08|Boulder|013|401448N|1053208W|40.2466513|-105.5355555|401535N|1053357W|40.2596|-105.5658|2625|8612|Allenspark|08/01/1990|03/15/2007
+hidden_brook = Geoname.create!(feature_id: 169344,
+                               feature_name: 'Hidden Brook',
+                               feature_class: 'Stream',
+                               state_alpha: 'CO',
+                               county_name: 'Boulder',
+                               primary_lat_dms: '401448N',
+                               prim_long_dms: '1053208W',
+                               prim_lat_dec: 40.2466513,
+                               prim_long_dec: -105.5355555,
+                               elev_in_m: 2625,
+                               elev_in_ft: 8612,
+                               map_name: 'Allenspark')
+
 # 169345|Wulsten Baldy|Summit|CO|08|Custer|027|381505N|1054417W|38.2513874|-105.7380624|||||3870|12697|Cotopaxi|08/01/1990|
 # 169346|Barnes Ridge|Ridge|CO|08|Garfield|045|394330N|1080912W|39.7249748|-108.1534144|||||2383|7818|Cutoff Gulch|08/01/1990|
 # 169347|V Rock|Cliff|CO|08|Archuleta|007|370728N|1064738W|37.1244538|-106.7939245|||||3140|10302|Chromo|08/01/1990|
