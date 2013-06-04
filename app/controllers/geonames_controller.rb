@@ -2,7 +2,7 @@ class GeonamesController < ApplicationController
 
   def index
     @geonames = Geoname.search(params)
-    # puts @geonames
+    # filters = params[:query]
   end
 
   def results
@@ -10,12 +10,8 @@ class GeonamesController < ApplicationController
   end
 
   def map
-    # @coordinates = Geoname.new
     @geoname = Geoname.search(params)
     @geo_search = Geoname.search(params)
-    # @search_terms = params[query]
-    # @latitude = Geoname.first.prim_lat_dec
-    # @longitude = Geoname.first.prim_long_dec
   end
 
 

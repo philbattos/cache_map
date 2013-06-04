@@ -11,21 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530051044) do
+ActiveRecord::Schema.define(:version => 20130603181509) do
 
   create_table "geonames", :force => true do |t|
     t.integer  "feature_id"
     t.string   "feature_name"
     t.string   "feature_class"
-    t.string   "state_alpha"
+    t.text     "state_alpha"
+    t.integer  "state_numeric"
     t.string   "county_name"
-    t.string   "primary_lat_dms"
-    t.string   "prim_long_dms"
-    t.string   "prim_lat_dec"
-    t.string   "prim_long_dec"
+    t.integer  "county_numeric"
+    t.text     "primary_lat_dms"
+    t.text     "prim_long_dms"
+    t.text     "prim_lat_dec"
+    t.text     "prim_long_dec"
+    t.text     "source_lat_dms"
+    t.text     "source_long_dms"
+    t.text     "source_lat_dec"
+    t.text     "source_long_dec"
     t.integer  "elev_in_m"
     t.integer  "elev_in_ft"
     t.string   "map_name"
+    t.datetime "date_created"
+    t.datetime "date_edited"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

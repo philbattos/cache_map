@@ -1,74 +1,102 @@
-<h2>Map</h2>
-
-<p><%= link_to "Home page", geonames_path %>
-
-<p><%= link_to "Search Results", results_path %>
-
-<h3>Search results for: "<%= params["query"] %>"</h3>
-  <% @geo_search.each do |geoname| %>
-    <ul>
-      <li><h4>
-      Name: <%= link_to geoname.feature_name, geoname_path(geoname.feature_id) %><br>
-      Class: <%= geoname.feature_class %>
-      <!-- <br><%= link_to 'map', :controller => 'geonames', :action => 'map', :id => @geoname %> -->
-      </h4></li>
-    </ul>
-  <% end %>
-
 <% content_for :map do %>
 
-    <style type="text/css">
-      html { height: 70% }
-      body { height: 70%; margin: 20; padding: 0 }
-      #map-canvas { height: 100% }
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhaz5wjB5uu0vCAjTFLT8o5om2zk7UMYk&sensor=false">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(37.000, -105.000),
-          zoom: 6,
-          mapTypeId: google.maps.MapTypeId.TERRAIN
-          };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhaz5wjB5uu0vCAjTFLT8o5om2zk7UMYk&sensor=false">
+  </script>
+  <script type="text/javascript">
+    function initialize() {
+      var mapOptions = {
+        center: new google.maps.LatLng(42.500, -110.500),
+        zoom: 6,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+        },
+        zoomControl: true,
+        zoomControlOptions: {
+          style: google.maps.ZoomControlStyle.SMALL
+        },
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-        <% @geo_search.each do |geoname| %>
+      <% @geo_search.each do |geoname| %>
 
-          var geo<%= geoname.feature_id %> = new google.maps.LatLng(<%= geoname.prim_lat_dec %>, <%= geoname.prim_long_dec %>);
-          var marker<%= geoname.feature_id %> = new google.maps.Marker({
-            position: geo<%= geoname.feature_id %>,
-            map: map,
-            title: "<%= geoname.feature_name %>"
-          });
-          var contentString<%= geoname.feature_id %> = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h3 id="firstHeading" class="firstHeading"><%= geoname.feature_name %></h3>'+
-            '<div id="bodyContent">'+
-            '<br>Type: <%= geoname.feature_class %>' +
-            '<br>State: <%= geoname.state_alpha %>' +
-            '<br>County: <%= geoname.county_name %>' +
-            '<br>Latitude: <%= geoname.prim_lat_dec %>' +
-            '<br>Longitude: <%= geoname.prim_long_dec %>' +
-            '<br>Elevation: <%= geoname.elev_in_ft %> ft.' +
-            '</div>';
-          var infowindow<%= geoname.feature_id %> = new google.maps.InfoWindow({
-            content: contentString<%= geoname.feature_id %>
-          });
-          google.maps.event.addListenerOnce(marker<%= geoname.feature_id %>, 'click', function() {
-            infowindow<%= geoname.feature_id %>.open(map,marker<%= geoname.feature_id %>);
-          });
-        <% end %>
+        var geo<%= geoname.feature_id %> = new google.maps.LatLng(<%= geoname.prim_lat_dec %>, <%= geoname.prim_long_dec %>);
+        var marker<%= geoname.feature_id %> = new google.maps.Marker({
+          position: geo<%= geoname.feature_id %>,
+          map: map,
+          title: "<%= geoname.feature_name %>"
+        });
+        var contentString = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h3 id="firstHeading" class="firstHeading"><%= geoname.feature_name %></h3>'+
+          '<div id="bodyContent">'+
+          '<br>Type: <%= geoname.feature_class %>' +
+          '<br>State: <%= geoname.state_alpha %>' +
+          '<br>County: <%= geoname.county_name %>' +
+          '<br>Latitude: <%= geoname.prim_lat_dec %>' +
+          '<br>Longitude: <%= geoname.prim_long_dec %>' +
+          '<br>Elevation: <%= geoname.elev_in_ft %> ft.' +
+          '</div>';
+        var infowindow<%= geoname.feature_id %> = new google.maps.InfoWindow({
+          content: contentString
+        });
+        google.maps.event.addListenerOnce(marker<%= geoname.feature_id %>, 'click', function() {
+          infowindow<%= geoname.feature_id %>.open(map,marker<%= geoname.feature_id %>);
+        });
+      <% end %>
 
-          var bounds = new google.maps.LatLngBounds();
-        <% @geo_search.each do |geoname| %>
-            bounds.extend(geo<%= geoname.feature_id %>);
-        <% end %>
-            map.fitBounds(bounds);
-      };
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+        var bounds = new google.maps.LatLngBounds();
+      <% @geo_search.each do |geoname| %>
+          bounds.extend(geo<%= geoname.feature_id %>);
+      <% end %>
+          map.fitBounds(bounds);
+    };
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 
-  <% end %>
+<% end %>
+
+<div class="row">
+
+  Map
+  <%= link_to "Home page", geonames_path %>
+  <%= link_to "Search Results", results_path %>
+
+</div>
+
+
+
+<div class="row">
+  <div class="large-8 columns">
+    <div id="map-canvas" style="height: 600px;">
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+    <!-- <div class="panel" style="height: 600px;"> -->
+    <h5></h5>
+    <table>
+      <thead>
+        <tr>
+          <th width="300px;"><div style="font-size: 26px;">Search Results</div><br>
+          <div style="font-size: 18px;"><%= @geo_search.count %> places with "<%= params["query"] %>"</div></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @geo_search.each do |geoname| %>
+        <tr>
+          <td>Name: <%= link_to geoname.feature_name, geoname_path(geoname.feature_id) %><br>
+
+          Class: <%= geoname.feature_class %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+

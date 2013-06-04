@@ -1,17 +1,9 @@
-<p>Name: <%= @geoname.feature_name %>
-<p>Type: <%= @geoname.feature_class %>
-<p>State: <%= @geoname.state_alpha %>
-<p>County: <%= @geoname.county_name %>
-<p>Latitude: <%= @geoname.prim_lat_dec %>
-<p>Longitude: <%= @geoname.prim_long_dec %>
-<p>Elevation: <%= @geoname.elev_in_ft %> ft.
+<% content_for :map do %>
 
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
       html { height: 100% }
-      body { height: 100%; margin: 20px; padding: 0 }
-      #map-canvas { height: 60%; width: 60%; margin: 0px; }
+      body { height: 100%; margin: 0px; padding: 0 }
+      #map-canvas { height: 100%; margin: 0px; }
     </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhaz5wjB5uu0vCAjTFLT8o5om2zk7UMYk&sensor=false">
@@ -22,7 +14,15 @@
         var mapOptions = {
           center: myLatlng,
           zoom: 9,
-          // zoomControl: false,
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL
+          },
+          // panControl: false,
           mapTypeId: google.maps.MapTypeId.TERRAIN,
           }
         var map = new google.maps.Map(document.getElementById("map-canvas"),
@@ -30,7 +30,7 @@
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
-          title:"Hello World!"
+          title:"<%= @geoname.feature_name %>"
           });
         // var marker = new google.maps.MarkerOptions(position: gon.latitude, gon.longitude);
         // var marker = new google.maps.Marker(document.getElementById("map-canvas"),
@@ -39,22 +39,43 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
-  </head>
-  <body>
-    <div id="map-canvas"/>
-  </body>
+<% end %>
 
+<div class="row">
 
+  Map
+  <%= link_to "Search Results page", geonames_path %>
+  <%= link_to "Search Results", results_path %>
 
-<!--      t.integer  "feature_id"
-    t.string   "feature_name"
-    t.string   "feature_class"
-    t.string   "state_alpha"
-    t.string   "county_name"
-    t.text     "primary_lat_dms"
-    t.text     "prim_long_dms"
-    t.text     "prim_lat_dec"
-    t.text     "prim_long_dec"
-    t.integer  "elev_in_m"
-    t.integer  "elev_in_ft"
-    t.string   "map_name" -->
+</div>
+
+<div class="row">
+  <div class="large-8 columns">
+    <div id="map-canvas" style="height: 600px;">
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+    <!-- <div class="panel" style="height: 600px;"> -->
+    <h5></h5>
+    <table>
+      <thead>
+        <tr>
+          <th width="300px;"><div style="font-size: 28px;"><%= @geoname.feature_name %></div><br>
+          <div style="font-size: 18px; padding-bottom: 5px;">Type: <%= @geoname.feature_class %></div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>State: <%= @geoname.state_alpha %></td></tr>
+        <tr><td>County: <%= @geoname.county_name %></td></tr>
+        <tr><td>Latitude: <%= @geoname.prim_lat_dec %></td></tr>
+        <tr><td>Longitude: <%= @geoname.prim_long_dec %></td></tr>
+        <tr><td>Elevation: <%= @geoname.elev_in_ft %> ft.</td></tr>
+
+      </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+

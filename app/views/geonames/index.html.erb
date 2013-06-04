@@ -1,20 +1,29 @@
-<h2>Index page</h2>
+<div class="map-background-image" style="align: top;">
 
-  <%= form_tag map_path, method: :get do %>
-    <p>
-      <h4><%= label_tag "Search for clues" %>
-      <br><%= text_field_tag :query, params[:query] %>
-      <%= submit_tag "Find Clues", feature_name: nil %></h4>
-    </p>
-  <% end %>
+  <div class="large-12 columns">
+    <h1 align="right"><div style="margin-right: 150px;">CacheMap</div></h1>
+  </div>
 
-<!-- <% @geonames.each do |geoname| %> -->
-  <!-- <h4> -->
-    <!-- <%= link_to geoname.feature_name, geoname %>: <%= geoname.feature_class %> -->
-  <!-- </h4> -->
-<!-- <% end %> -->
+  <div class="row" style="padding-top: 400px;">
+    <div class="large-1 columns">...</div>
+      <div class="small-10 large-7 columns">
+
+        <%= form_tag map_path, method: :get do %>
+          <p>
+            <h4><%= label_tag "Search for clues" %>
+            <br><%= text_field_tag :query, params[:query] %>
+            <br><%= check_box_tag "filters[]", "city" %>Only find places above 5000 ft.
+            <%= submit_tag "Find Clues", feature_name: nil %></h4>
+          </p>
+        <% end %>
+
+      </div>
+    <div class="large-1 columns">...</div>
+  </div>
+
+</div>
 
 
-<p><%= link_to "Search page", results_path %>
 
-<p><%= link_to "Map page", map_path %>
+
+
