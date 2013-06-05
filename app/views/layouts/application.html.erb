@@ -27,7 +27,12 @@
 
     <%= render :partial => "nav_bar" %>
 
+    <div id="landing-container">
+      <div id="map-background" class="translucent"></div>
+
     <%= yield %>
+
+    </div>
 
     <%= javascript_include_tag "application" %>
   </body>

@@ -1,27 +1,38 @@
-<div class="map-background-image" style="align: top;">
 
-  <div class="large-12 columns">
-    <h1 align="right"><div style="margin-right: 150px;">CacheMap</div></h1>
-  </div>
-
-  <div class="row" style="padding-top: 400px;">
+  <!-- <div id="content"> -->
+    <!-- <div class="row"> -->
     <div class="large-1 columns">...</div>
-      <div class="small-10 large-7 columns">
+    <div class="large-10 columns">
+      <h1><div style="margin-right: 80px; text-align: right">CacheMap</div></h1>
+    </div>
 
-        <%= form_tag map_path, method: :get do %>
-          <p>
-            <h4><%= label_tag "Search for clues" %>
-            <br><%= text_field_tag :query, params[:query] %>
-            <br><%= check_box_tag "filters[]", "city" %>Only find places above 5000 ft.
-            <%= submit_tag "Find Clues", feature_name: nil %></h4>
-          </p>
-        <% end %>
+    <div class="row" style="padding-top: 400px;">
+      <div class="large-1 columns">...</div>
+        <div class="small-10 large-7 columns">
+          <h3 id="notice"><i><%= flash[:notice] %></i></h3>
+          <%= form_tag map_path, method: :get do %>
+            <p>
+              <h4>Search for clues</h4>
+              <br><%= text_field_tag :query, params[:query] %>
+              <br><%= check_box_tag "elevation_5000", "yes" %>Only find places above 5000 ft.
+              <h5>Select the states you would like to search:</h5>
+              <br><input id="select_states_co" type="checkbox" value="1" name="select_states[CO]">Colorado
+              <br><input id="select_states_id" type="checkbox" value="1" name="select_states[ID]">Idaho
+<!--               <br><%= check_box_tag "select_colorado", "CO" %> Colorado
+              <br><%= check_box_tag "select_states", "ID" %> Idaho
+              <br><%= check_box_tag "select_states", "MT" %> Montana
+              <br><%= check_box_tag "select_states", "NM" %> New Mexico
+              <br><%= check_box_tag "select_states", "UT" %> Utah
+              <br><%= check_box_tag "select_states", "WY" %> Wyoming</p> -->
+              <!-- <br><%= select(:geoname, :state_alpha, [['CO', 1], ['ID', 2], ['MT', 3], ['NM', 4], ['UT', 5], ['WY', 6]]) %> -->
+              <p><%= submit_tag "Find Clues", feature_name: nil, class: "button" %></p></h4>
+            </p>
+          <% end %>
 
-      </div>
-    <div class="large-1 columns">...</div>
-  </div>
+        </div>
+      <div class="large-1 columns">...</div>
+    </div>
 
-</div>
 
 
 

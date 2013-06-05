@@ -59,6 +59,8 @@
 
 <% end %>
 
+
+
 <div class="row">
 
   Map
@@ -70,15 +72,27 @@
 
 
 <div class="row">
-  <div class="large-8 columns">
-    <div id="map-canvas" style="height: 600px;">
+  <div class="large-8 columns" style="padding: 30px;">
+    <div id="map-canvas" style="height: 600px; border: 3px solid;
+    box-shadow: 0px 0px 8px;">
+    </div>
+    <div class="row">
+      <h3 id="notice"><i><%= flash[:notice] %></i></h3>
+      <%= form_tag map_path, method: :get do %>
+        <p>
+          <h4>New Search</h4>
+          <br><%= text_field_tag :query, params[:query] %>
+          <br><%= check_box_tag "above5000", "yes" %>Only find places above 5000 ft.
+          <br><%= submit_tag "Find Clues", feature_name: nil %></h4>
+        </p>
+      <% end %>
     </div>
   </div>
 
   <div class="large-4 columns">
     <!-- <div class="panel" style="height: 600px;"> -->
     <h5></h5>
-    <table>
+    <table style="border: 1px; box-shadow: 0px 0px 7px;">
       <thead>
         <tr>
           <th width="300px;"><div style="font-size: 26px;">Search Results</div><br>

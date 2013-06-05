@@ -13,7 +13,7 @@ task :import => :environment do
   # file = File.open("/public/CO_features_small_sample.txt")
   indexes = [:feature_id, :feature_name, :feature_class, :state_alpha]
   geo_data = {}
-  @geonames = File.open("public/CO_features_small_sample.txt")
+  @geonames = File.readlines("public/CO_features_small_sample.txt")
   # readlines
   @geonames.lines.each do |line|
     geo_data[indexes.pop]=line.chomp
