@@ -1,0 +1,37 @@
+<% content_for :map do %>
+  <%= render :partial => "/map_single" %>
+<% end %>
+
+<div class="row">
+  <div class="large-8 columns" style="padding: 30px;">
+    <div id="map-canvas" style="height: 600px; border: 2px solid darkgreen;
+    box-shadow: 0px 0px 8px;">
+    </div>
+  </div>
+
+  <div class="large-4 columns" style="padding: 30px;">
+    <div class="row">
+      <table style="border: 1px; box-shadow: 0px 0px 7px;">
+        <thead>
+          <tr>
+            <th width="300px;"><div style="font-size: 26px; line-height: 1.1em"><%= @geoname.feature_name %></div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Feature Type: <%= @geoname.feature_class %>
+          <tr><td>State: <%= @geoname.state_alpha %></td></tr>
+          <tr><td>County: <%= @geoname.county_name %></td></tr>
+          <tr><td>Latitude: <%= @geoname.prim_lat_dec %></td></tr>
+          <tr><td>Longitude: <%= @geoname.prim_long_dec %></td></tr>
+          <tr><td>Elevation: <%= @geoname.elev_in_ft %> ft.</td></tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <p style="align: center;"><br><%= link_to "Back to Search Results", :back, class: "button" %>
+    </div>
+  </div>
+</div>
+

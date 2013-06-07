@@ -1,0 +1,67 @@
+<% content_for :map do %>
+  <%= render :partial => "/map_results" %>
+<% end %>
+
+<div class="row">
+</div>
+
+<div class="row">
+  <div class="large-8 columns" style="padding: 30px;">
+    <div id="map-canvas" style="height: 600px; border: 2px solid darkgreen; box-shadow: 0px 0px 8px;">
+    </div>
+
+    <div class="row">
+        <br>
+        <br>
+          <% if flash[:notice] %>
+            <div class='flash' id='flash-format'><%= flash[:notice] %></div>
+          <% end %>
+        <%= form_tag map_path, method: :get do %>
+            <div id="search-title">New Search</div>
+              <br><%= text_field_tag :query, params[:query] %>
+                <input id="elevation_5000" type="checkbox" value="yes" name="elevation_5000"> Only search locations above 5000 ft.
+              <%= submit_tag "Find Clues", feature_name: nil, class: "button large" %>
+
+              <div style="font-size: 24px;">Select the states to search:</div>
+                <div class="row">
+                  <div class="large-4 columns">
+                    <br><input id="select_state" type="checkbox" value="CO" name="select_state[CO]" checked="yes">Colorado
+                    <br><input id="select_state" type="checkbox" value="ID" name="select_state[ID]" checked="yes">Idaho
+                  </div>
+                  <div class="large-4 columns">
+                    <br><input id="select_state" type="checkbox" value="MT" name="select_state[MT]" checked="yes">Montana
+                    <br><input id="select_state" type="checkbox" value="NM" name="select_state[NM]" checked="yes">New Mexico
+                  </div>
+                  <div class="large-4 columns">
+                    <br><input id="select_state" type="checkbox" value="UT" name="select_state[UT]" checked="yes">Utah
+                    <br><input id="select_state" type="checkbox" value="WY" name="select_state[WY]" checked="yes">Wyoming
+                  </div>
+                </div>
+
+            <% end %>
+    </div>
+  </div>
+
+  <div class="large-4 columns" style="padding: 30px;">
+    <table style="border: 1px solid darkgreen; box-shadow: 0px 0px 7px;">
+      <thead>
+        <tr>
+          <th width="300px;"><div style="font-size: 26px; margin-top: 10px;">Search Results</div><br>
+          <div style="font-size: 18px; padding-bottom: 5px;"><%= @geo_search.count %> places with "<%= params["query"] %>"</div></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @geo_search.each do |geoname| %>
+        <tr>
+          <td>Name: <%= link_to geoname.feature_name, geoname_path(geoname.feature_id) %><br>
+
+          Feature Type: <%= geoname.feature_class %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+

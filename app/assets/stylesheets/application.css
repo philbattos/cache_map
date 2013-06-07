@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+ *= require_tree .
+ *= require "foundation"
+ */
+.translucent {
+  opacity: 0.3;
+}
+#landing-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#map-background, #content {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#map-background {
+  background-image:url('old_map.jpg');
+  /*background-color:#EEE;*/
+  width:100%;
+  height:100%;
+}
+
+.large-textbox {
+  /*height: 100px;*/
+  width: 500px;
+  font-size: 50px;
+}
+
+#search-title {
+  font-family: 'IM Fell DW Pica';
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#poem-title {
+  font-family: 'IM Fell DW Pica';
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  color: #5C5523;
+}
+
+#poem-body {
+  font-family: 'IM Fell DW Pica';
+  font-size: 22px;
+  color: #5C5523;
+  /*text-align: right;*/
+}
+#poem-style, #content {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#poem-style {
+  background-image: url('white.jpg');
+  width: 100%;
+  height: 100%;
+}
+
+.poem-background {
+  opacity: 0.6;
+}
+
+#poem-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  margin-top: 30px;
+  margin-bottom: 150px;
+  /*text-align: right;*/
+  border: 0px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px;
+  padding: 12px;
+  padding-top: 25px;
+}
+
+#poem-image {
+  background-image: url('treasure_chest_full.jpg');
+}
+#search-example {
+  padding-top:9px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+#flash-format {
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: Helvetica;
+  font-size: 24px;
+  color: red;
+  width: 400px;
+  text-align: center;
+}

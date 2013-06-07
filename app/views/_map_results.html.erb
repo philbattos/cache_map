@@ -1,0 +1,56 @@
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhaz5wjB5uu0vCAjTFLT8o5om2zk7UMYk&sensor=false">
+  </script>
+  <script type="text/javascript">
+    function initialize() {
+      var mapOptions = {
+        center: new google.maps.LatLng(42.500, -110.500),
+        zoom: 6,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+        },
+        zoomControl: true,
+        zoomControlOptions: {
+          style: google.maps.ZoomControlStyle.SMALL
+        },
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+      <% @geo_search.each do |geoname| %>
+
+        var geo<%= geoname.feature_id %> = new google.maps.LatLng(<%= geoname.prim_lat_dec %>, <%= geoname.prim_long_dec %>);
+        var marker<%= geoname.feature_id %> = new google.maps.Marker({
+          position: geo<%= geoname.feature_id %>,
+          map: map,
+          title: "<%= geoname.feature_name %>"
+        });
+        var contentString = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h3 id="firstHeading" class="firstHeading"><%= geoname.feature_name %></h3>'+
+          '<div id="bodyContent">'+
+          '<br>Type: <%= geoname.feature_class %>' +
+          '<br>State: <%= geoname.state_alpha %>' +
+          '<br>County: <%= geoname.county_name %>' +
+          '<br>Latitude: <%= geoname.prim_lat_dec %>' +
+          '<br>Longitude: <%= geoname.prim_long_dec %>' +
+          '<br>Elevation: <%= geoname.elev_in_ft %> ft.' +
+          '</div>';
+        var infowindow<%= geoname.feature_id %> = new google.maps.InfoWindow({
+          content: contentString
+        });
+        google.maps.event.addListenerOnce(marker<%= geoname.feature_id %>, 'click', function() {
+          infowindow<%= geoname.feature_id %>.open(map,marker<%= geoname.feature_id %>);
+        });
+      <% end %>
+
+        var bounds = new google.maps.LatLngBounds();
+      <% @geo_search.each do |geoname| %>
+          bounds.extend(geo<%= geoname.feature_id %>);
+      <% end %>
+          map.fitBounds(bounds);
+    };
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>

@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="large-8 columns"></div>
+    <div class="row">
+      <div class="large-1 columns"></div>
+        <div class="large-6 columns" style="padding-top: 240px;">
+          <div style="margin-right: 50px; margin-bottom: 90px; font-size: 110px">CacheMap
+          <div style="font-size: 38px; margin-top: 10px;"> Find Forrest Fenn's Treasure</div></div>
+
+              <% if flash[:notice] %>
+                <div class='flash' id='flash-format'><%= flash[:notice] %></div>
+              <% end %>
+
+            <%= form_tag map_path, method: :get do %>
+            <div class="row">
+              <div class="large-5 columns">
+            <div id="search-title">Search for clues </div></div>
+              <div id="search-example" class="large-7 columns"> (ex: "river", "treasure chest")</div></div>
+              <br><%= text_field_tag :query, params[:query] %>
+                <input id="elevation_5000" type="checkbox" value="yes" name="elevation_5000"> Only search locations above 5000 ft.
+              <%= submit_tag "Find Clues", feature_name: nil, class: "button large" %>
+
+              <div style="font-size: 24px;">Select the states to search:</div>
+                <div class="row">
+                  <div class="large-4 columns">
+                    <br><input id="select_state" type="checkbox" value="CO" name="select_state[CO]" checked="yes">Colorado
+                    <br><input id="select_state" type="checkbox" value="ID" name="select_state[ID]" checked="yes">Idaho
+                  </div>
+                  <div class="large-4 columns">
+                    <br><input id="select_state" type="checkbox" value="MT" name="select_state[MT]" checked="yes">Montana
+                    <br><input id="select_state" type="checkbox" value="NM" name="select_state[NM]" checked="yes">New Mexico
+                  </div>
+                  <div class="large-4 columns">
+                    <br><input id="select_state" type="checkbox" value="UT" name="select_state[UT]" checked="yes">Utah
+                    <br><input id="select_state" type="checkbox" value="WY" name="select_state[WY]" checked="yes">Wyoming
+                  </div>
+                </div>
+
+            <% end %>
+
+        </div>
+
+        <div class="large-5 columns">
+          <div id="poem-panel">
+            <div id="poem-style" class="poem-background"></div>
+              <div class="row">
+                <div class="12-large columns">
+                  <div class="row">
+                  <div id="poem-title">The Thrill of the Chase</div>
+                    <div id="poem-body">
+                      <p></p>
+                      In 2010, an illustrious art dealer in Sante Fe, NM hid a chest of gold and jewels in the Rocky Mountains - a cache estimated to be worth over $1m. He wrote a poem containing nine clues that lead directly to his secret treasure spot.
+                      <p></p>
+                      CacheMap helps you decipher the poem by locating geographic places related to the clues. By finding the right landmarks, you could be the first to blaze a trail straight to the treasure!
+                      <p></p>
+                      <%= image_tag "treasure_chest_short.jpg" %>
+    <!--                   <i>
+                      As I have gone alone in there
+                      <br>And with my treasures bold,
+                      <br>I can keep my secret where,
+                      <br>And hint of riches new and old.
+                      <p></p>
+                      <br>Begin it where warm waters halt
+                      <br>And take it in the canyon down,
+                      <br>Not far, but too far to walk.
+                      <br>Put in below the home of Brown.
+                      <p></p>
+                      <br>From there it's no place for the meek,
+                      <br>The end is ever drawing nigh;
+                      <br>There'll be no paddle up your creek,
+                      <br>Just heavy loads and water high.
+                      <p></p>
+                      <br>If you've been wise and found the blaze,
+                      <br>Look quickly down, your quest to cease,
+                      <br>But tarry scant with marvel gaze,
+                      <br>Just take the chest and go in peace.
+                      <p></p>
+                      <br>So why is it that I must go
+                      <br>And leave my trove for all to seek?
+                      <br>The answer I already know,
+                      <br>I've done it tired, and now I'm weak.
+                      <p></p>
+                      <br>So hear me all and listen good,
+                      <br>Your effort will be worth the cold.
+                      <br>If you are brave and in the wood
+                      <br>I give you title to the gold.
+                      </i> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+    </div>
+
+</div>
+

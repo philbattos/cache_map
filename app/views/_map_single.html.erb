@@ -1,0 +1,35 @@
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0px; padding: 0 }
+      #map-canvas { height: 100%; margin: 0px; }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhaz5wjB5uu0vCAjTFLT8o5om2zk7UMYk&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(<%= @geoname.prim_lat_dec %>, <%= @geoname.prim_long_dec %>);
+        var mapOptions = {
+          center: myLatlng,
+          zoom: 11,
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL
+          },
+          mapTypeId: google.maps.MapTypeId.TERRAIN,
+          }
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+          mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title:"<%= @geoname.feature_name %>"
+          });
+        };
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
