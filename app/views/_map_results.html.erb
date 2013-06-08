@@ -1,4 +1,4 @@
-<script type="text/javascript"
+  <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhaz5wjB5uu0vCAjTFLT8o5om2zk7UMYk&sensor=false">
   </script>
   <script type="text/javascript">
@@ -12,7 +12,7 @@
         },
         zoomControl: true,
         zoomControlOptions: {
-          style: google.maps.ZoomControlStyle.SMALL
+          style: google.maps.ZoomControlStyle.LARGE
         },
         mapTypeId: google.maps.MapTypeId.TERRAIN
         };
@@ -26,7 +26,8 @@
           map: map,
           title: "<%= geoname.feature_name %>"
         });
-        var contentString = '<div id="content">'+
+        var contentString =
+          '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
           '<h3 id="firstHeading" class="firstHeading"><%= geoname.feature_name %></h3>'+

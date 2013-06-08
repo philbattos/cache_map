@@ -27,7 +27,10 @@ a:hover {
 a:focus {
   outline: none; }
 
-img,
+/* partial fix of info window bug */
+img[src*="gstatic.com/"], img[src*="googleapis.com/"]  {
+    max-width: 99999px;
+}
 object,
 embed {
   max-width: 100%;
@@ -40,6 +43,7 @@ embed {
 img {
   -ms-interpolation-mode: bicubic; }
 
+#map img{max-width: inherit;}
 #map_canvas img,
 #map_canvas embed,
 #map_canvas object,
@@ -4115,7 +4119,7 @@ a.th {
   /*font-size: 0.9375em;*/
   line-height: 1.3;
   padding: 0.5em;
-  max-width: 85%;
+/*  max-width: 85%; */
   left: 50%;
   width: 100%;
   color: white;
