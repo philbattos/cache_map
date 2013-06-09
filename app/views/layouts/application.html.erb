@@ -13,6 +13,9 @@
     <%= javascript_include_tag "jquery", "application" %>
     <%= csrf_meta_tags %>
 
+    <!-- shim for HTML5 elements for older browsers -->
+    <script src="/js/custom.modernizr.js"></script>
+
     <%= yield :map %>
 
   </head>
@@ -27,6 +30,19 @@
     <%= yield %>
 
     </div>
+
+    <!-- Foundation js to make top-bar (and other features?) work -->
+    <!-- Check for Zepto support, load jQuery if necessary -->
+    <script>
+      document.write('<script src=/js/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js><\/script>');
+    </script>
+
+    <!-- initialize Foundation -->
+    <script>
+      $(document).foundation();
+    </script>
 
   </body>
 

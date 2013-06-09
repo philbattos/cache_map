@@ -6,7 +6,7 @@ CacheMap::Application.routes.draw do
   get 'results' => 'geonames#results'
   get 'map' => 'geonames#map'
   get 'poem' => 'geonames#poem'
-  # get 'hunt' => 'hunt#index'
+  get 'hunt' => 'geonames#hunt'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

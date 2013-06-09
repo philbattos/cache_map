@@ -23,6 +23,10 @@ class GeonamesController < ApplicationController
 
   end
 
+  def hunt
+
+  end
+
   def new
     @geoname = Geoname.new
   end

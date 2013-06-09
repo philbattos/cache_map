@@ -2649,7 +2649,7 @@ form.custom {
   .top-bar .name {
     height: 45px;
     margin: 0;
-    font-size: 16px; }
+    font-size: 1.2em; }
     .top-bar .name h1 {
       line-height: 45px;
       font-size: 1.0625em;
@@ -2718,7 +2718,7 @@ form.custom {
     height: auto;
     display: block;
     background: #4f4f4f;
-    font-size: 16px;
+    font-size: 1.2em;
     margin: 0; }
   .top-bar-section .divider,
   .top-bar-section [role="separator"] {
@@ -2731,9 +2731,9 @@ form.custom {
     display: block;
     width: 100%;
     color: white;
-    padding: 10px 0 12px 0;
-    padding-left: 10px;
-    font-size: 1em;
+    padding: 12px 0 12px 0;
+    padding-left: 15px;
+    font-size: 1.2em;
     font-weight: bold;
     background: #4f4f4f; }
     .top-bar-section ul li > a.hover {
@@ -2766,6 +2766,7 @@ form.custom {
     .top-bar-section .has-dropdown > a:after {
       content: "";
       display: block;
+      color: white;
       width: 0;
       height: 0;
       border: inset 5px;
@@ -2860,7 +2861,8 @@ form.custom {
     .top-bar-section li a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #4f4f4f; }
+      background: #4f4f4f;
+      color: white; }
       .top-bar-section li a:not(.button).hover {
         background: black; }
     .top-bar-section .has-dropdown > a {
