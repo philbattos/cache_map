@@ -9,7 +9,7 @@ require 'csv'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Geoname.delete_all
 
 # Colorado Features
 CSV.table('seed_data_files/CO_Features_Small_20130404.txt', col_sep: '|').each do |row|

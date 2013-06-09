@@ -19,6 +19,10 @@ class GeonamesController < ApplicationController
     # @geoname = Geoname.find_by_feature_id(params[:id])
   end
 
+  def poem
+
+  end
+
   def new
     @geoname = Geoname.new
   end

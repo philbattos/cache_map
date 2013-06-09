@@ -34,6 +34,10 @@ class Geoname < ActiveRecord::Base
       end
     end
   end
+
+  # to delete Elastic Search (seed) data for Geoname table,
+  # run "curl -XDELETE 'http://localhost:9200/geonames/'" from terminal,
+  # then run rake db:reset to repopulate database
 end
 
   # def self.search(params)
