@@ -31,6 +31,26 @@ class GeonamesController < ApplicationController
 
   end
 
+  def facts
+
+  end
+
+  def book
+
+  end
+
+  def fenn
+
+  end
+
+  def blogs
+
+  end
+
+  def gallery
+
+  end
+
   def new
     @geoname = Geoname.new
   end

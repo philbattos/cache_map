@@ -8,6 +8,11 @@ CacheMap::Application.routes.draw do
   get 'poem' => 'geonames#poem'
   get 'hunt' => 'geonames#hunt'
   get 'clues' => 'geonames#clues'
+  get 'facts' => 'geonames#facts'
+  get 'book' => 'geonames#book'
+  get 'forrestfenn' => 'geonames#fenn'
+  get 'blogs' => 'geonames#blogs'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
