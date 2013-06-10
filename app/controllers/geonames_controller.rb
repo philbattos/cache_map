@@ -27,6 +27,10 @@ class GeonamesController < ApplicationController
 
   end
 
+  def clues
+
+  end
+
   def new
     @geoname = Geoname.new
   end

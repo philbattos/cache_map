@@ -30,6 +30,7 @@
   background-image:url('old_map.jpg');
   /*background-color:#EEE;*/
   width:100%;
+  min-height: 700px;
   height:100%;
 }
 
