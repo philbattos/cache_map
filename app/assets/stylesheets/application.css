@@ -11,7 +11,8 @@
  *= require_self
  *= require foundation_and_overrides
  *= require_tree .
- *= require foundation
+ *= require "foundation"
+ *= require jquery
  */
 .translucent {
   opacity: 0.3;
