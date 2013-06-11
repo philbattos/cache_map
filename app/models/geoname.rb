@@ -24,7 +24,7 @@ class Geoname < ActiveRecord::Base
                   :date_edited
 
   def self.search(params)
-    tire.search per_page: 20 do
+    tire.search per_page: 2000 do
       query do
         boolean do
           must { string params[:query] } if params[:query].present?
