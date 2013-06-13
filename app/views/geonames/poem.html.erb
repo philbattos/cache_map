@@ -50,7 +50,7 @@
         <div id="poem-style" class="poem-background"></div>
           <div class="row">
             <div class="12-large columns">
-              <div class="row">
+              <div class="hidden-poem">
               <div id="poem-title">The Thrill of the Chase</div>
                 <div id="poem-body">
                   <div style="text-align: center"><i>by Forrest Fenn</i></div>
@@ -89,6 +89,14 @@
                     <%= image_tag "treasure_chest_short.jpg" %>
                   </i>
                 </div>
+
+                <script>
+                  $( document ).ready(function() {
+                    $( "#poem-body" ).hide();
+                    $( "#poem-body" ).slideDown( 3000 );
+                  });
+                </script>
+
               </div>
             </div>
           </div>
