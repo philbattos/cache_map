@@ -9,12 +9,12 @@
     <title><%= content_for?(:title) ? yield(:title) : "CacheMap" %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= javascript_include_tag "jquery", "application" %>
+    <%= javascript_include_tag "application" %>
+
     <%= csrf_meta_tags %>
 
     <!-- shim for HTML5 elements for older browsers -->
-    <script src="/js/custom.modernizr.js"></script>
+    <%= javascript_include_tag "vendor/custom.modernizr.js" %>
 
     <%= yield :map %>
 
@@ -24,28 +24,15 @@
 
     <%= render :partial => "/nav_bar" %>
 
+    <!-- to include all of Foundation Core and all JS plugins -->
+    <%= javascript_include_tag "foundation/foundation.js" %>
+
     <div id="landing-container">
       <div id="map-background" class="translucent"></div>
 
     <%= yield %>
 
     </div>
-
-    <!-- Foundation js to make top-bar (and other features?) work -->
-    <!-- Check for Zepto support, load jQuery if necessary -->
-    <script>
-      document.write('<script src=/js/vendor/'
-        + ('__proto__' in {} ? 'zepto' : 'jquery')
-        + '.js><\/script>');
-    </script>
-
-    <!-- to include all of Foundation Core and all JS plugins -->
-    <script src="/js/foundation.min.js"></script>
-
-    <!-- initialize Foundation -->
-    <script>
-      $(document).foundation();
-    </script>
 
   </body>
 
