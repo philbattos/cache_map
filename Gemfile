@@ -17,8 +17,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem "pg"
-gem 'therubyracer'
+group :production do
+  gem "pg"
+end
+
+# gem 'therubyracer'
 
 group :development, :test do
   gem "sqlite3", :require => "sqlite3"
