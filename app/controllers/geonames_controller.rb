@@ -10,7 +10,7 @@ class GeonamesController < ApplicationController
     if params[:query] == ""
       redirect_to :back, :flash => { :notice => "Please enter clues to search for" }
     elsif @geo_search.count == 0
-      redirect_to :back, :flash => { :notice => "Sorry, no results for that search. Please enter a new search." }
+      redirect_to geonames_path, :flash => { :notice => "Sorry, no results for that search. Please enter a new search." }
     end
   end
 
